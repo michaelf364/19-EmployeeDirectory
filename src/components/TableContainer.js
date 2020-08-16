@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import Container from "./Container";
 import Row from "./Row";
-import Col from "./Col";
-import Card from "./Card";
-import Navbar from "./Navbar";
-import MovieDetail from "./MovieDetail";
+import Jumbotron from "./Jumbotron";
 import getEmployeeName from "../utils/API";
+import DatatablePage from "./Table"
 
-class OmdbContainer extends Component {
+class TableContainer extends Component {
   state = {
     result: {},
     search: ""
@@ -15,7 +13,7 @@ class OmdbContainer extends Component {
 
   // When this component mounts, search for the movie "The Matrix"
   componentDidMount() {
-    this.searchMovies("The Matrix");
+    this.loadEmployees();
   }
 
   loadEmployees = () => [
@@ -35,49 +33,22 @@ class OmdbContainer extends Component {
       })
   ]
 
-  handleInputChange = event => {
-    const value = event.target.value;
-    const name = event.target.name;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  // When the form is submitted, search the OMDB API for the value of `this.state.search`
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.searchMovies(this.state.search);
-  };
-
   render() {
     return (
 
       <Container>
-        <Navbar />
+        <Jumbotron />
         <Row>
-          <Col size="md-8">
-            <Card
-              heading={this.state.result.Title || "Search for a Movie to Begin"}
-            >
-              {this.state.result.Title ? (
-                <MovieDetail
-                  title={this.state.result.Title}
-                  src={this.state.result.Poster}
-                  director={this.state.result.Director}
-                  genre={this.state.result.Genre}
-                  released={this.state.result.Released}
-                />
-              ) : (
-                  <h3>No Results to Display</h3>
-                )}
-            </Card>
-          </Col>
-          <Col size="md-4">
-          </Col>
+          <DatatablePage
+            firstName={this.employee.name.first}
+            lastName={this.employee.name.last}
+            phoneNumber={this.employee.phone}
+            age={this.employee.dob.age}
+          />
         </Row>
       </Container>
     );
   }
 }
 
-export default OmdbContainer;
+export default TableContainer;
