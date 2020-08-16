@@ -1,53 +1,53 @@
-# Unit 19 React Homework: Employee Directory
+# Who's Who
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/michaelf364/11-express)
 
-## Overview
+A Searchable and Sortable Employee Directory
 
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+## Table of Contents 
+* [Website Link](#websitelink)
+* [Functioning](#functioning)
+* [Installation](#installation)
+* [Technology Used](#technologyused)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Questions](#questions)
 
-## User Story
+## Website Link
 
-* As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+https://vast-beach-68234.herokuapp.com/
 
-## Business Context
+## Functioning
 
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+![gif](https://i.imgur.com/kNhCgAd.gif)
 
-## Acceptance Criteria
+## Installation
 
-Given a table of random users, when the user loads the page, a table of employees should render. 
+This repository does not require installation.
 
-The user should be able to:
+## Technology Used
 
-  * Sort the table by at least one category
+react
+dotenv
+eslint
+express
+html
+css
+javascript
 
-  * Filter the users by at least one property.
+## Usage
 
-## Commit Early and Often
+A Searchable and Sortable Employee Directory
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+## License
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
+This project is licensed under the GPL 3.0 license.
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
+## Contributing
 
-Follow these guidelines for committing:
+This repository does not need contributions.
 
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
+## Questions
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-* Test your application before you commit to ensure functionality at every step in the development process
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* the URL to the deployed application
-
-* the URL to the Github repository
-
+If you have any questions about the repo, open an issue or contact [michaelf364](https://github.com/michaelf364/) directly at 1@1.com
+![avatar](https://avatars3.githubusercontent.com/u/26904234?v=4)
