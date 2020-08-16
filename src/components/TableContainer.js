@@ -12,6 +12,9 @@ class TableContainer extends Component {
 
   componentDidMount() {
     this.loadEmployees();
+    this.callBackendAPI()
+      .then(res => this.setState({ data: res.express }))
+      .catch(err => console.log(err));
   }
 
   loadEmployees = () => [
@@ -29,6 +32,15 @@ class TableContainer extends Component {
       })
   ];
 
+  callBackendAPI = async () => {
+    const response = await fetch('/');
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error(body.message) 
+    }
+    return body;
+  };
   buildData = () => {
     let employees = this.state.employees.map((employee) => {
       return (
@@ -40,7 +52,7 @@ class TableContainer extends Component {
           firstName: employee.name.first,
           lastName: employee.name.last,
           phoneNumber: employee.phone,
-          age: employee.dob.age,
+          email: employee.email,
         }
       )
     });
@@ -53,6 +65,7 @@ class TableContainer extends Component {
         {
           label: 'Employee Picture',
           field: 'employeePicture',
+          sort: 'disabled',
           width: 150
         },
         {
@@ -71,8 +84,8 @@ class TableContainer extends Component {
           width: 200
         },
         {
-          label: 'Age',
-          field: 'age',
+          label: 'Email',
+          field: 'email',
           width: 100
         }
       ],
@@ -80,21 +93,21 @@ class TableContainer extends Component {
     };
 
     return (
-
       <Container>
         <Jumbotron />
         <MDBDataTableV5
           striped
+          order={['firstName', 'asc' ]}
           bordered
           small
           data={data}
-          pagingTop
           searchTop
           searchBottom={false}
           entriesOptions={[5, 20, 25]}
           entries={5}
           materialSearch
           hover
+          fullPagination 
         />
       </Container>
     );

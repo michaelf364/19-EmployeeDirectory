@@ -1,7 +1,8 @@
 import React from "react";
 
 function Container(props) {
-  return <div className={`container${props.fluid ? "-fluid" : ""}`}>{props.children}</div>;
+  // eslint-disable-next-line react/prop-types
+  return <div className="container">{props.children}</div>;
 }
 
 export default Container;
