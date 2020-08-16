@@ -58,25 +58,21 @@ class TableContainer extends Component {
         {
           label: 'First Name',
           field: 'firstName',
-          sort: 'asc',
           width: 150
         },
         {
           label: 'Last Name',
           field: 'lastName',
-          sort: 'asc',
           width: 270
         },
         {
           label: 'Phone Number',
           field: 'phoneNumber',
-          sort: 'asc',
           width: 200
         },
         {
           label: 'Age',
           field: 'age',
-          sort: 'asc',
           width: 100
         }
       ],
@@ -92,10 +88,13 @@ class TableContainer extends Component {
           bordered
           small
           data={data}
+          pagingTop
           searchTop
           searchBottom={false}
           entriesOptions={[5, 20, 25]}
           entries={5}
+          materialSearch
+          hover
         />
       </Container>
     );
